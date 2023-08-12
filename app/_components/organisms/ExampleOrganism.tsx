@@ -4,7 +4,6 @@ interface ExampleOrganismProps {
   exampleProp2: number; // name: type;
 }
 
-
 /***
  * Organism components are the largest components and they usually contain molecules and atoms
  * They tend to be something that can't be broken down into smaller components

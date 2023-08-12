@@ -12,7 +12,7 @@ export async function callAPI(config: callAPIConfig) {
     url,
     method = "GET",
     data,
-    headers = { "Content-Type": "application/json" }
+    headers = { "Content-Type": "application/json" },
   } = config;
 
   const axiosClient = axios.create();
@@ -21,7 +21,7 @@ export async function callAPI(config: callAPIConfig) {
     method,
     url,
     data,
-    headers
+    headers,
   }).catch((error) => {
     if (error.response) {
       return Promise.reject(error.response.data.message);

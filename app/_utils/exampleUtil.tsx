@@ -7,5 +7,5 @@
  */
 
 export const exampleUtil = () => {
-  return 'exampleUtil'
-}
+  return "exampleUtil";
+};

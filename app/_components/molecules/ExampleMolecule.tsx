@@ -4,7 +4,6 @@ interface ExampleMoleculeProps {
   exampleProp2: number; // name: type;
 }
 
-
 /***
  * Molecule components are the second smallest components and they usually contain atoms
  * They should only include the minimal amount of logic and state necessary to perform their intended function.

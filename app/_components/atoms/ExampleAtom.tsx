@@ -4,7 +4,6 @@ interface ExampleAtomProps {
   exampleProp2: number; // name: type;
 }
 
-
 /***
  * Atom components are the smallest components and should only contain
  * the most basic HTML elements. They should not contain any logic or

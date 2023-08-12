@@ -7,7 +7,5 @@
  */
 
 export default function DetailPage() {
-  return (
-    <div>page</div>
-  )
+  return <div>page</div>;
 }
