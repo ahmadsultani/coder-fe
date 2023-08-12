@@ -35,7 +35,8 @@
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": [
       "pnpm lint",
-      "pnpm format"
+      "pnpm format",
+      "git add"
     ]
   }
 }
