@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import LogoText from "../molecules/LogoText";
 
 interface NavbarProps {
   label: string;
@@ -18,31 +19,16 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="flex w-screen h-16 justify-between border-b border-primary-light-active items-center py-4 px-12">
-      <section className="flex items-center gap-2">
-        <Link href="/">
-          <Image
-            draggable={false}
-            src="./icons/logo-coder.svg"
-            alt="Logo Coder"
-            width={31}
-            height={31}
-            priority
-          />
-        </Link>
-        <div className="flex flex-col font-bold leading-tight text-[20px]">
-          <h1 className="-mb-1">CODER INSTITUTE</h1>
-          <h1>HMIF FT-UH</h1>
-        </div>
-      </section>
+    <nav className="flex w-screen h-16 justify-between sticky top-0 border-b border-primary-light-active items-center py-4 px-12 bg-white">
+      <LogoText />
       <section className="flex gap-4 py-3 px-4 text-xl text-center">
         {navItems.map((link) => (
           <Link key={link.id} href={link.href}>
             <span
               className={`${
                 active === link.id
-                  ? "font-semibold text-[#EBB702] border-b-2 border-[#EBB702]"
-                  : "hover:font-semibold hover:text-[#EBB702] hover:border-b-2 hover:border-[#EBB702]"
+                  ? "font-semibold text-primary-normal border-b-2 border-primary-normal"
+                  : "hover:font-semibold hover:text-primary-normal hover:border-b-2 hover:border-primary-normal"
               } transition-all`}
               onClick={() => setActive(link.id)}
             >
