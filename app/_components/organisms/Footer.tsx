@@ -1,4 +1,4 @@
-import LogoTitle from "../molecules/LogoTitle";
+import LogoText from "@molecules/LogoText";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,21 +7,21 @@ export default function Footer() {
     <footer className="flex px-12 py-[72px] flex-col w-screen bg-secondary-white">
       <main className="flex justify-between mb-[66px]">
         <section className="flex flex-col gap-8">
-          <LogoTitle />
+          <LogoText />
           <main className="flex flex-col gap-4">
-            <section className="flex gap-[10px]">
-              <Image 
-                width={24} 
-                height={24} 
-                src="/icons/place.svg" 
-                alt="icon place" 
-               />
+            <section className="flex gap-[15px]">
+              <Image
+                width={24}
+                height={24}
+                src="/icons/place.svg"
+                alt="icon place"
+              />
               <span className="text-l">
                 Gedung Student Center Lt. 1 Fakultas Teknik
                 <br /> Universitas Hasanuddin, Gowa 92171
               </span>
             </section>
-            <section className="flex gap-[10px]">
+            <section className="flex gap-[15px]">
               <Image
                 width={24}
                 height={24}
@@ -58,9 +58,7 @@ export default function Footer() {
       </main>
 
       <section className="flex justify-between">
-        <span className="text-m">
-          © 2023 Coder Institute HMIF FT-UH
-        </span>
+        <span className="text-m">© 2023 Coder Institute HMIF FT-UH</span>
         <ul className="flex gap-4 text-primary-normal text-l">
           <li>
             <Link href={"/"}>Instagram</Link>
