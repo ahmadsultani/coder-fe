@@ -1,4 +1,4 @@
-import LogoIcon from "../atoms/LogoIcon";
+import LogoIcon from "@atoms/LogoIcon";
 import Link from "next/link";
 
 export default function LogoText() {
