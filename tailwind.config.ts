@@ -17,7 +17,7 @@ const config: Config = {
           "dark-active": "#151515",
         },
         primary: {
-          light: "#FDF8E6",
+          light: "#FFF9E6",
           "light-hover": "#FCF4D9",
           "light-active": "#F9E9B1",
           normal: "#EBB702",
