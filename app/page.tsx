@@ -1,5 +1,6 @@
 import Navbar from "@organisms/Navbar";
 import HeroSection from "@organisms/Hero";
+import Projects from "@organisms/Projects";
 import Footer from "@organisms/Footer";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <main>
       <Navbar />
       <HeroSection />
+      <Projects />
       <Footer />
     </main>
   );
