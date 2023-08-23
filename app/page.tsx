@@ -1,5 +1,5 @@
-import Navbar from "./_components/organisms/Navbar";
-import HeroSection from "./_components/organisms/Hero";
+import Navbar from "@organisms/Navbar";
+import HeroSection from "@organisms/Hero";
 
 export default function Home() {
   return (
