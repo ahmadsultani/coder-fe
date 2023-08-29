@@ -35,7 +35,7 @@
     "prettier": "^3.0.1"
   },
   "lint-staged": {
-    "*.{js,ts,jsx,tsx,css}": [
+    "*.{js,ts,jsx,tsx}": [
       "pnpm format",
       "pnpm lint"
     ]
