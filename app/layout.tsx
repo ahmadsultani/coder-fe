@@ -13,6 +13,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Coder Institute",
   description: "Coder Institute website made by Website and UI/UX division",
+  icons: {
+    icon: "/icons/logo-coder.svg",
+  },
 };
 
 export default function RootLayout({
