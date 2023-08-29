@@ -2,23 +2,24 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="flex items-center gap-24 pl-16 py-6">
-      <section className="flex flex-col flex-1 gap-6">
+    <section className="flex items-center gap-24 pl-16 py-8">
+      <section className="flex flex-col flex-1 gap-8">
         <header className="flex flex-col gap-2 font-bold">
-          <h1 className="text-heading-l">Selamat Datang</h1>
-          <span className=" text-heading-xl text-primary-normal lg:whitespace-nowrap">
-            CODER INSTITUTE <br /> HMIF FT-UH
-          </span>
+          <h1 className=" text-heading-xl text-primary-normal lg:whitespace-nowrap">
+            CODER INSTITUTE <br />
+            <span className=" text-neutral-dark-active">HMIF FT-UH</span>
+          </h1>
         </header>
-        <p className=" text-neutral-dark-active text-justify">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim eu
-          turpis egestas pretium aenean pharetra magna ac placerat. Proin
-          sagittis nisl rhoncus mattis. Nunc congue nisi vitae suscipit tellus
-          mauris a diam. Sagittis purus sit amet volutpat. Gravida rutrum
+        <p className=" font-bold text-heading-s text-neutral-dark-active text-justify">
+          Tempat belajar dan berkembang untuk kamu yang tertarik mendalami
+          teknologi. Mau belajar Web Development?{" "}
+          <span className=" font-medium">
+            Mobile Development? Game Development? UI/UX? Internet of Things?
+          </span>{" "}
+          Semuanya ada!
         </p>
         <button className="flex justify-center items-center gap-1 w-fit px-4 py-3 rounded text-heading-s font-medium bg-primary-normal text-primary-light hover:bg-primary-normal-hover">
-          Reach Us
+          Kontak Kami
           <span>
             <Image
               src="/icons/arrow-up.svg"
@@ -29,12 +30,26 @@ const HeroSection = () => {
           </span>
         </button>
       </section>
-      <section className="right-0">
+      <section className="relative -z-50">
         <Image
           src="/images/hero-image.webp"
           width={631}
           height={763}
           alt="Hero Image"
+        />
+        <Image
+          className="absolute top-0 -left-20 -z-10"
+          src="/images/square.webp"
+          width={221}
+          height={253}
+          alt="bg-square"
+        />
+        <Image
+          src="/images/star.webp"
+          className="absolute -bottom-[34px] -left-11"
+          width={68}
+          height={68}
+          alt="bg-star"
         />
       </section>
     </section>
