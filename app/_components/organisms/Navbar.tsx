@@ -19,16 +19,16 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="flex w-screen h-16 justify-between sticky top-0 border-b border-primary-light-active items-center py-4 px-12 bg-white">
+    <nav className="sticky top-0 z-50 flex h-16 w-screen items-center justify-between border-b border-primary-light-active bg-white px-12 py-4">
       <LogoText />
-      <section className="flex gap-4 py-3 px-4 text-xl text-center">
+      <section className="flex gap-4 px-4 py-3 text-center text-xl">
         {navItems.map((link) => (
           <Link key={link.id} href={link.href}>
             <span
               className={`${
                 active === link.id
-                  ? "font-semibold text-primary-normal border-b-2 border-primary-normal"
-                  : "hover:font-semibold hover:text-primary-normal hover:border-b-2 hover:border-primary-normal"
+                  ? "border-b-2 border-primary-normal font-semibold text-primary-normal"
+                  : "hover:border-b-2 hover:border-primary-normal hover:font-semibold hover:text-primary-normal"
               } transition-all`}
               onClick={() => setActive(link.id)}
             >
