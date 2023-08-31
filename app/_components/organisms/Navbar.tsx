@@ -13,23 +13,23 @@ export default function Navbar() {
   const [active, setActive] = useState<number | null>(null);
 
   const navItems = [
-    { id: 1, title: "Button", href: "/" },
-    { id: 2, title: "Button", href: "/" },
-    { id: 3, title: "Button", href: "/" },
+    { id: 1, title: "Beranda", href: "/" },
+    { id: 2, title: "Proyek", href: "/#" },
+    { id: 3, title: "Kontak kami", href: "/#" },
   ];
 
   return (
-    <nav className="flex w-screen h-16 justify-between sticky top-0 border-b border-primary-light-active items-center py-4 px-12 bg-white">
+    <nav className="sticky top-0 flex h-20 w-screen items-center justify-between bg-white px-12 py-4">
       <LogoText />
-      <section className="flex gap-4 py-3 px-4 text-xl text-center">
+      <section className="flex gap-4 px-4 py-3 text-center text-xl text-primary-normal">
         {navItems.map((link) => (
           <Link key={link.id} href={link.href}>
             <span
               className={`${
                 active === link.id
-                  ? "font-semibold text-primary-normal border-b-2 border-primary-normal"
-                  : "hover:font-semibold hover:text-primary-normal hover:border-b-2 hover:border-primary-normal"
-              } transition-all`}
+                  ? "font-semibold text-primary-normal"
+                  : "hover:font-semibold hover:text-primary-normal "
+              } px-4 py-3`}
               onClick={() => setActive(link.id)}
             >
               {link.title}
