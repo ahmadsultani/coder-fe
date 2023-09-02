@@ -15,21 +15,21 @@ const Projects = () => {
   return (
     <main className="relative flex w-screen flex-col gap-8 p-[40px_64px]">
       <Image
-        src={"/images/ProjectEllipse.webp"}
+        src={"/decorations/ProjectEllipse.webp"}
         width={355}
         height={355}
         alt=""
         className="absolute left-[-178px] top-[-198px] -z-10"
       />
       <Image
-        src={"/images/ProjectStar.webp"}
+        src={"/decorations/ProjectStar.webp"}
         width={513}
         height={513}
         alt=""
         className="absolute right-[-211px] top-[-46px] -z-10"
       />
       <Image
-        src={"/images/ProjectStar2.webp"}
+        src={"/decorations/ProjectStar2.webp"}
         width={387}
         height={387}
         alt=""
