@@ -1,4 +1,4 @@
-import ButtonPrimary from "@atoms/ButtonPrimary";
+import PrimaryButton from "@atoms/PrimaryButton";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -30,28 +30,28 @@ function ContactUs() {
         <section className="z-10 flex gap-[180px]">
           <section>
             <Link href={"https://www.linkedin.com/company/coder-institute"}>
-              <ButtonPrimary>
+              <PrimaryButton>
                 <Image
-                  src="/icons/icon _linkedin_.svg"
+                  src="/icons/icon_linkedin_.svg"
                   width={20}
                   height={20}
                   alt="icon-linkedin"
                 />
                 <p className="underline">Linkedin</p>
-              </ButtonPrimary>
+              </PrimaryButton>
             </Link>
           </section>
           <section>
             <Link href={"https://www.instagram.com/coderinstitute/"}>
-              <ButtonPrimary>
+              <PrimaryButton>
                 <Image
-                  src="/icons/icon _instagram_.svg"
+                  src="/icons/icon_instagram_.svg"
                   width={20}
                   height={20}
                   alt="icon-instagram"
                 />
                 <p className="underline">Instagram</p>
-              </ButtonPrimary>
+              </PrimaryButton>
             </Link>
           </section>
         </section>
