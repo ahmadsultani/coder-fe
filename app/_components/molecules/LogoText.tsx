@@ -5,7 +5,7 @@ export default function LogoText() {
   return (
     <section className="flex items-center gap-2">
       <Link href="/">
-        <LogoIcon size={46} />
+        <LogoIcon size={56} />
       </Link>
       <div className="flex flex-col text-text-m font-bold leading-tight">
         <h1 className="">CODER INSTITUTE HIMPUNAN MAHASISWA INFORMATIKA</h1>
