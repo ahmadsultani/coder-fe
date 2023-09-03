@@ -1,16 +1,17 @@
 import Image from "next/image";
+import PrimaryButton from "../atoms/PrimaryButton";
 
 const HeroSection = () => {
   return (
-    <section className="flex items-center gap-24 py-8 pl-16 ">
+    <section className="flex items-center gap-24 px-7 py-8 lg:pl-16 lg:pr-0 ">
       <section className="flex flex-1 flex-col gap-8">
         <header className="flex flex-col gap-2 font-bold">
-          <h1 className=" text-heading-xl text-primary-normal lg:whitespace-nowrap">
+          <h1 className="text-heading-m text-primary-normal sm:text-heading-l lg:whitespace-nowrap lg:text-heading-xl">
             CODER INSTITUTE <br />
             <span className=" text-neutral-dark-active">HMIF FT-UH</span>
           </h1>
         </header>
-        <p className=" text-justify text-heading-s font-bold text-neutral-gray">
+        <p className="shrink text-justify text-text-s font-bold text-neutral-gray lg:text-heading-s">
           Tempat belajar dan berkembang untuk kamu yang tertarik mendalami
           teknologi.{" "}
           <span className=" font-medium">
@@ -19,7 +20,7 @@ const HeroSection = () => {
           </span>{" "}
           Semuanya ada!
         </p>
-        <button className="flex w-fit items-center justify-center gap-1 rounded bg-primary-normal px-4 py-3 text-heading-s font-medium text-primary-light hover:bg-primary-normal-hover ">
+        <PrimaryButton>
           Kontak Kami
           <span>
             <Image
@@ -29,9 +30,9 @@ const HeroSection = () => {
               alt="Arrow Up"
             />
           </span>
-        </button>
+        </PrimaryButton>
       </section>
-      <section className="relative -z-50">
+      <section className="relative -z-50 hidden lg:block">
         <Image
           src="/images/hero-image.webp"
           width={631}

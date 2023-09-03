@@ -13,76 +13,78 @@ const Projects = () => {
 
   const { onMouseDown } = useDraggableScroll(ref, { direction: "horizontal" });
   return (
-    <main className="relative flex w-screen flex-col gap-8 p-[40px_64px]">
+    <div className="relative">
       <Image
         src={"/decorations/ProjectEllipse.webp"}
         width={355}
         height={355}
         alt=""
-        className="absolute left-[-178px] top-[-198px] -z-10"
+        className="absolute left-[-178px] top-[-198px] -z-10 overflow-hidden"
       />
-      <Image
-        src={"/decorations/ProjectStar.webp"}
-        width={513}
-        height={513}
-        alt=""
-        className="absolute right-[-211px] top-[-46px] -z-10"
-      />
-      <Image
-        src={"/decorations/ProjectStar2.webp"}
-        width={387}
-        height={387}
-        alt=""
-        className="absolute bottom-[-69px] left-[-178px] -z-10"
-      />
+      <main className="relative flex w-screen flex-col gap-8 overflow-hidden p-[40px_64px]">
+        <Image
+          src={"/decorations/ProjectStar.webp"}
+          width={513}
+          height={513}
+          alt=""
+          className="absolute right-[-211px] top-[-46px] -z-10 overflow-hidden"
+        />
+        <Image
+          src={"/decorations/ProjectStar2.webp"}
+          width={387}
+          height={387}
+          alt=""
+          className="absolute bottom-[-69px] left-[-178px] -z-10 overflow-hidden"
+        />
 
-      <section className="flex w-full flex-col gap-6 ">
-        <span className="text-heading-l font-semibold text-neutral-dark">
-          Intip Karya-Karya Terbaik Buatan Anggota
-          <span className="text-primary-normal ">&nbsp;CODER INSTITUTE </span>
-        </span>
-        <p className="text-heading-s text-neutral-dark">
-          Kamu tau kan kalau anggota CODER INSTITUTE keren-keren??Tauu doong
-          pasti! <br />
-          Anggota yang keren tentunya jago buat karya yang keren dooong! Yuk
-          eksplor karya-karya terbaiknya.
-        </p>
-      </section>
-      <section className="w-full">
-        <main className="flex w-full flex-col gap-8">
-          <section className="w-full ">
-            {topProjectLists
-              .filter((project) => project.topProject === true)
-              .map((project, index) => (
-                <ProjectCard
-                  key={index}
-                  title={project.title}
-                  fullWidth={true}
-                  description={project.description}
-                />
-              ))}
-          </section>
-          <section ref={ref} className="select-none overflow-x-hidden">
-            <section onMouseDown={onMouseDown} className="flex w-max gap-8 ">
+        <section className="flex w-full flex-col gap-6 ">
+          <span className="text-heading-l font-semibold text-neutral-dark">
+            Intip Karya-Karya Terbaik Buatan Anggota
+            <span className="text-primary-normal ">&nbsp;CODER INSTITUTE </span>
+          </span>
+          <p className="text-heading-s text-neutral-dark">
+            Kamu tau kan kalau anggota CODER INSTITUTE keren-keren??Tauu doong
+            pasti! <br />
+            Anggota yang keren tentunya jago buat karya yang keren dooong! Yuk
+            eksplor karya-karya terbaiknya.
+          </p>
+        </section>
+        <section className="w-full">
+          <main className="flex w-full flex-col gap-8">
+            <section className="w-full ">
               {topProjectLists
-                .filter((project) => project.topProject !== true)
+                .filter((project) => project.topProject === true)
                 .map((project, index) => (
                   <ProjectCard
                     key={index}
                     title={project.title}
+                    fullWidth={true}
                     description={project.description}
                   />
                 ))}
             </section>
-          </section>
-        </main>
-      </section>
-      <section className="flex w-full justify-center">
-        <Link href={"#"}>
-          <PrimaryButton>Lihat Semua Project</PrimaryButton>
-        </Link>
-      </section>
-    </main>
+            <section ref={ref} className="select-none overflow-x-hidden">
+              <section onMouseDown={onMouseDown} className="flex w-max gap-8 ">
+                {topProjectLists
+                  .filter((project) => project.topProject !== true)
+                  .map((project, index) => (
+                    <ProjectCard
+                      key={index}
+                      title={project.title}
+                      description={project.description}
+                    />
+                  ))}
+              </section>
+            </section>
+          </main>
+        </section>
+        <section className="flex w-full justify-center">
+          <Link href={"#"}>
+            <PrimaryButton>Lihat Semua Project</PrimaryButton>
+          </Link>
+        </section>
+      </main>
+    </div>
   );
 };
 

@@ -4,36 +4,38 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="flex w-screen flex-col bg-secondary-white px-12 py-[72px]">
-      <main className="mb-[66px] flex justify-between">
+    <footer className="flex w-screen flex-col gap-8 bg-secondary-white px-4 py-8 pt-[72px] md:px-7 lg:gap-[66px] lg:px-12 lg:py-[72px]">
+      <main className=" flex flex-col justify-between gap-8 lg:flex-row">
         <section className="flex flex-col gap-8">
           <LogoText />
           <main className="flex flex-col gap-4">
-            <section className="flex gap-[15px]">
+            <section className="flex items-center gap-[15px]">
               <Image
                 width={24}
                 height={24}
                 src="/icons/place.svg"
                 alt="icon place"
               />
-              <span className="text-text-l">
+              <span className="text-text-s lg:text-text-l">
                 Gedung Student Center Lt. 1 Fakultas Teknik
                 <br /> Universitas Hasanuddin, Gowa 92171
               </span>
             </section>
-            <section className="flex gap-[15px]">
+            <section className="flex items-center gap-[15px]">
               <Image
                 width={24}
                 height={24}
                 src="/icons/mail_outline.svg"
                 alt="icon mail"
               />
-              <span className="text-text-l">coderinstitute.uh@gmail.com</span>
+              <span className="text-text-s lg:text-text-l">
+                coderinstitute.uh@gmail.com
+              </span>
             </section>
           </main>
         </section>
 
-        <section className="text-right text-text-l">
+        <section className="text-text-l lg:text-right">
           <section className="mb-2">
             <span className="font-bold text-primary-normal">Divisi</span>
           </section>
@@ -57,7 +59,7 @@ export default function Footer() {
         </section>
       </main>
 
-      <section className="flex justify-between">
+      <section className="flex flex-col-reverse justify-between gap-4 lg:flex-row">
         <span className="text-text-m">© 2023 Coder Institute HMIF FT-UH</span>
         <ul className="flex gap-4 text-text-l text-primary-normal">
           <li>
