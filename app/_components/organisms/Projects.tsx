@@ -37,8 +37,8 @@ const Projects = () => {
       />
 
       <section className="flex w-full flex-col gap-6 ">
-        <span className="flex text-heading-l font-semibold text-neutral-dark">
-          <span className=" ">Intip Karya-Karya Terbaik Buatan Anggota</span>
+        <span className="text-heading-l font-semibold text-neutral-dark">
+          Intip Karya-Karya Terbaik Buatan Anggota
           <span className="text-primary-normal ">&nbsp;CODER INSTITUTE </span>
         </span>
         <p className="text-heading-s text-neutral-dark">
