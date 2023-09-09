@@ -7,11 +7,9 @@ import ContactUs from "./_components/organisms/ContactUs";
 export default function Home() {
   return (
     <main>
-      <Navbar />
       <HeroSection />
       <Projects />
       <ContactUs />
-      <Footer />
     </main>
   );
 }
