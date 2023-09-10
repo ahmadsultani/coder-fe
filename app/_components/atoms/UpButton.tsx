@@ -13,11 +13,11 @@ const UpButton = () => {
   return (
     <main
       title="Scroll To Top"
-      className="fixed bottom-10 right-10 z-10 select-none"
+      className="fixed bottom-4 right-4 z-10 select-none"
     >
       <button
         onClick={scrollToTop}
-        className="flex aspect-square h-12 items-center justify-center rounded-[50%] bg-primary-normal opacity-90 duration-300 hover:bg-primary-normal-hover hover:opacity-100 md:h-16 lg:h-20"
+        className="flex aspect-square h-12 items-center justify-center rounded-[50%] bg-primary-normal opacity-50 duration-300 hover:bg-primary-normal hover:opacity-100 lg:h-14"
       >
         <Image
           alt="up"
