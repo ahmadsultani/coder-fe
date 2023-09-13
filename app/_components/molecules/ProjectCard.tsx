@@ -36,7 +36,7 @@ const ProjectCard = (props: ProjectCardProps) => {
       <main className="absolute flex h-full w-full items-end bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,1)]">
         <section className="flex w-full flex-col gap-2 p-4 lg:p-6 ">
           <div
-            className={`h-fit w-max max-w-[60%] rounded-[26px] border-[1px] border-solid border-primary-normal bg-transparent p-[4px_8px] lg:max-w-[50%] ${textSize} font-semibold text-neutral-light lg:p-[8px_16px] `}
+            className={`h-fit w-max max-w-[50%] rounded-[26px] border-[1px] border-solid border-primary-normal bg-transparent p-[4px_8px] lg:max-w-[50%] ${textSize} font-semibold text-neutral-light lg:p-[8px_16px] `}
           >
             <span className="line-clamp-1">{title}</span>
           </div>
