@@ -21,7 +21,7 @@ const Projects = () => {
         alt=""
         className="absolute left-[-178px] top-[-198px] -z-10 overflow-hidden"
       />
-      <main className="relative flex w-screen flex-col gap-8 overflow-hidden p-[40px_64px]">
+      <main className="relative flex w-screen flex-col gap-8 overflow-hidden px-7 py-10 md:px-11 lg:px-16">
         <Image
           src={"/decorations/ProjectStar.webp"}
           width={513}
@@ -37,12 +37,12 @@ const Projects = () => {
           className="absolute bottom-[-69px] left-[-178px] -z-10 overflow-hidden"
         />
 
-        <section className="flex w-full flex-col gap-6 ">
-          <span className="text-heading-l font-semibold text-neutral-dark">
+        <section className="flex w-full flex-col gap-3 lg:gap-6 ">
+          <span className="text-heading-s font-semibold text-neutral-dark lg:text-heading-l">
             Intip Karya-Karya Terbaik Buatan Anggota
             <span className="text-primary-normal ">&nbsp;CODER INSTITUTE </span>
           </span>
-          <p className="text-heading-s text-neutral-dark">
+          <p className="text-text-s text-neutral-dark lg:text-heading-s">
             Kamu tau kan kalau anggota CODER INSTITUTE keren-keren??Tauu doong
             pasti! <br />
             Anggota yang keren tentunya jago buat karya yang keren dooong! Yuk
@@ -50,7 +50,7 @@ const Projects = () => {
           </p>
         </section>
         <section className="w-full">
-          <main className="flex w-full flex-col gap-8">
+          <main className="flex w-full flex-col gap-4 md:gap-6 lg:gap-8">
             <section className="w-full ">
               {topProjectLists
                 .filter((project) => project.topProject === true)
@@ -63,8 +63,14 @@ const Projects = () => {
                   />
                 ))}
             </section>
-            <section ref={ref} className="select-none overflow-x-hidden">
-              <section onMouseDown={onMouseDown} className="flex w-max gap-8 ">
+            <section
+              ref={ref}
+              className="select-none overflow-x-scroll lg:overflow-x-hidden"
+            >
+              <section
+                onMouseDown={onMouseDown}
+                className="flex w-max gap-4 md:gap-6 lg:gap-8 "
+              >
                 {topProjectLists
                   .filter((project) => project.topProject !== true)
                   .map((project, index) => (
@@ -111,7 +117,7 @@ const topProjectLists = [
   },
   {
     topProject: true,
-    title: "Fourth Project(Best One)",
+    title: "Fourth Project (Best One)",
     description:
       "loremIpsumas dkasndasjdadkasbdabkasdbk dasdfpoqjkij sdiljasdnlal saldn",
   },
