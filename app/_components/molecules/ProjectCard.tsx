@@ -25,7 +25,7 @@ const ProjectCard = (props: ProjectCardProps) => {
     <main className={`relative -z-10 flex  ${width}`} draggable={false}>
       <Image
         fill
-        src="/images/PortfolioCardBgImage.webp"
+        src={imageURL || "/images/PortfolioCardBgImage.webp"}
         alt={""}
         priority
         draggable={false}
