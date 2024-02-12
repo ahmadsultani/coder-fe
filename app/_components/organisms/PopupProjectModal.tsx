@@ -15,13 +15,13 @@ export default function PopupProjectModal({
   return (
     <section className="fixed inset-0 z-50 flex h-screen w-screen flex-col items-center justify-center overflow-hidden bg-[rgba(0,0,0,0.9)]">
       <div className="m-auto w-screen flex-1 flex-col items-center justify-center overflow-y-scroll overscroll-contain pt-10 align-middle">
-        <header className="m-auto mb-5 flex w-[1024px] items-center justify-between gap-2 text-neutral-200">
+        <header className="m-auto mb-5 flex w-[90vw] max-w-[1024px] items-center justify-between gap-2 text-neutral-200">
           <section className="flex flex-col gap-2">
-            <h1 className="text-heading-m  font-semibold leading-9 ">
+            <h1 className="text-xl font-semibold leading-9 lg:text-heading-m">
               {title}
             </h1>
             <div className="flex gap-5">
-              <span className="text-xl font-medium leading-7 ">
+              <span className="text-text-m font-medium leading-7 lg:text-xl ">
                 Divisi {division}
               </span>
             </div>
@@ -38,11 +38,12 @@ export default function PopupProjectModal({
             />
           </button>
         </header>
-        <main className="m-auto flex w-[1024px] flex-col overscroll-contain">
+        <main className="m-auto flex w-[90vw] max-w-[1024px] flex-col overscroll-contain">
           <Image
             src={cover_image.src}
             width={1024}
             height={1024}
+            sizes="100vw"
             alt="placeholder"
           />
           {images?.map((image, index) => (
@@ -51,10 +52,11 @@ export default function PopupProjectModal({
               src={image.src}
               width={1024}
               height={1024}
+              sizes="100vw"
               alt="placeholder"
             />
           ))}
-          <section className="flex flex-col gap-8 bg-white px-16 py-8">
+          <section className="flex flex-1 flex-col gap-8 bg-white px-16 py-8">
             <h1 className="text-center text-heading-m  font-semibold leading-9">
               ABOUT
             </h1>

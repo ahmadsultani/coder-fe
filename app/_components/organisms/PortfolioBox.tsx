@@ -27,7 +27,7 @@ const PortfolioBox = () => {
   const [selectedProject, setSelectedProject] = useState<IProject>();
 
   return (
-    <main className="relative flex w-[100vw] flex-col gap-8 p-[24px_28px] md:p-[24px_48px] lg:p-[24px_64px]">
+    <main className="relative flex w-screen flex-col gap-8 overflow-x-hidden p-[24px_28px] md:p-[24px_48px] lg:p-[24px_64px]">
       <Image
         src={"/decorations/ProjectEllipse.webp"}
         width={355}
