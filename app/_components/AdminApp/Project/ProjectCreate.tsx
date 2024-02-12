@@ -68,7 +68,7 @@ const ProjectCreate = () => {
       });
 
       notify(`Project ${values.title} created`, { type: "success" });
-      // window.location.href = "/admin/#/projects";
+      window.location.href = "/admin/#/projects";
     } catch (error) {
       notify(`Could not create project: ${error ?? "Unknown error"}`, {
         type: "error",

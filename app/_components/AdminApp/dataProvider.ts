@@ -1,5 +1,8 @@
 import { DataProvider, Options, fetchUtils } from "react-admin";
 import simpleRestProvider from "ra-data-simple-rest";
+import { IResponse } from "@/_types/response";
+import { IProject } from "@/_types/project";
+import { deleteImg } from "@/_utils/image";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:5000";
 
@@ -78,5 +81,28 @@ export const dataProvider: DataProvider = {
     }
 
     return defaultProvider.update(resource, params);
+  },
+  delete: async (resource, params) => {
+    if (resource === "projects") {
+      const url = `${API_URL}/${resource}/${params.id}`;
+      const { json } = await fetchJson(url, {
+        method: "DELETE",
+      });
+      const { data } = json as IResponse<IProject>;
+
+      if (data?.cover_image.src) {
+        await deleteImg(data.cover_image.src);
+      }
+
+      if (data?.images) {
+        for (const image of data.images) {
+          await deleteImg(image.src);
+        }
+      }
+
+      return json.data;
+    }
+
+    return defaultProvider.delete(resource, params);
   },
 };
