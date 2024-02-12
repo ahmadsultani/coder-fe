@@ -1,9 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-
-import Navbar from "./_components/organisms/Navbar";
-import Footer from "./_components/organisms/Footer";
+import Providers from "./_providers";
 
 const poppins = Poppins({
   display: "swap",
@@ -28,10 +26,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
-        <Navbar />
-        {children}
-        <Footer />
+      <body className={`${poppins.className} m-0 max-w-[100vw] p-0`}>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

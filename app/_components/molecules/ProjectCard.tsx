@@ -4,10 +4,11 @@ interface ProjectCardProps {
   fullWidth?: boolean;
   title: string;
   description: string;
+  imageURL: string;
 }
 
 const ProjectCard = (props: ProjectCardProps) => {
-  const { fullWidth = false, title, description } = props;
+  const { fullWidth = false, title, description, imageURL } = props;
 
   const width = fullWidth
     ? "w-full h-[320px] md:h-[420px] lg:h-[520px]"
@@ -24,7 +25,7 @@ const ProjectCard = (props: ProjectCardProps) => {
     <main className={`relative -z-10 flex  ${width}`} draggable={false}>
       <Image
         fill
-        src={"/images/ProjectCardBgImage.webp"}
+        src="/images/PortfolioCardBgImage.webp"
         alt={""}
         priority
         draggable={false}

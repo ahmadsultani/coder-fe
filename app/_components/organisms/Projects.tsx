@@ -1,4 +1,5 @@
 "use client";
+
 import useDraggableScroll from "use-draggable-scroll";
 
 import { useRef } from "react";
@@ -7,13 +8,26 @@ import Image from "next/image";
 
 import ProjectCard from "@molecules/ProjectCard";
 import PrimaryButton from "@atoms/PrimaryButton";
+import { getAllBestProject, getAllProject } from "@/_service/project";
+import { useQuery } from "@tanstack/react-query";
 
 const Projects = () => {
+  const { data: bestProjects } = useQuery({
+    queryKey: ["best-project"],
+    queryFn: getAllBestProject,
+  });
+
+  const { data: projects } = useQuery({
+    queryKey: ["project", { page: 1, size: 9 }],
+    queryFn: () => getAllProject({ page: 1, size: 9 }),
+  });
+
   const ref = useRef(null);
 
   const { onMouseDown } = useDraggableScroll(ref, { direction: "horizontal" });
+
   return (
-    <div className="relative">
+    <div className="relative scroll-mt-20" id="proyek">
       <Image
         src={"/decorations/ProjectEllipse.webp"}
         width={355}
@@ -21,7 +35,7 @@ const Projects = () => {
         alt=""
         className="absolute left-[-178px] top-[-198px] -z-10 overflow-hidden"
       />
-      <main className="relative flex w-screen flex-col gap-8 overflow-hidden px-7 py-10 md:px-11 lg:px-16">
+      <main className="relative flex w-screen  flex-col gap-8 overflow-hidden px-7 py-10 md:px-11 lg:px-16">
         <Image
           src={"/decorations/ProjectStar.webp"}
           width={513}
@@ -52,16 +66,15 @@ const Projects = () => {
         <section className="w-full">
           <main className="flex w-full flex-col gap-4 md:gap-6 lg:gap-8">
             <section className="w-full ">
-              {topProjectLists
-                .filter((project) => project.topProject === true)
-                .map((project, index) => (
-                  <ProjectCard
-                    key={index}
-                    title={project.title}
-                    fullWidth={true}
-                    description={project.description}
-                  />
-                ))}
+              {bestProjects?.data?.map((project, index) => (
+                <ProjectCard
+                  key={index}
+                  title={project.title}
+                  imageURL={project.cover_image.src}
+                  fullWidth={true}
+                  description={project.description}
+                />
+              ))}
             </section>
             <section
               ref={ref}
@@ -71,21 +84,20 @@ const Projects = () => {
                 onMouseDown={onMouseDown}
                 className="flex w-max gap-4 md:gap-6 lg:gap-8 "
               >
-                {topProjectLists
-                  .filter((project) => project.topProject !== true)
-                  .map((project, index) => (
-                    <ProjectCard
-                      key={index}
-                      title={project.title}
-                      description={project.description}
-                    />
-                  ))}
+                {projects?.data?.map((project, index) => (
+                  <ProjectCard
+                    key={index}
+                    title={project.title}
+                    imageURL={project.cover_image.src}
+                    description={project.description}
+                  />
+                ))}
               </section>
             </section>
           </main>
         </section>
         <section className="flex w-full justify-center">
-          <Link href={"#"}>
+          <Link href={"/portfolio"}>
             <PrimaryButton>Lihat Semua Project</PrimaryButton>
           </Link>
         </section>
@@ -95,48 +107,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-const topProjectLists = [
-  {
-    topProject: false,
-    title: "First Project",
-    description:
-      "loremIpsumas dkasndasjdadkasbdabkasdbk dasdfpoqjkij sdiljasdnlal saldn",
-  },
-  {
-    topProject: false,
-    title: "Second Project",
-    description:
-      "loremIpsumas dkasndasjdadkasbdabkasdbk dasdfpoqjkij sdiljasdnlal saldn",
-  },
-  {
-    topProject: false,
-    title: "Third Project",
-    description:
-      "loremIpsumas dkasndasjdadkasbdabkasdbk dasdfpoqjkij sdiljasdnlal saldn",
-  },
-  {
-    topProject: true,
-    title: "Fourth Project (Best One)",
-    description:
-      "loremIpsumas dkasndasjdadkasbdabkasdbk dasdfpoqjkij sdiljasdnlal saldn",
-  },
-  {
-    topProject: false,
-    title: "Fifth Project",
-    description:
-      "loremIpsumas dkasndasjdadkasbdabkasdbk dasdfpoqjkij sdiljasdnlal saldn",
-  },
-  {
-    topProject: false,
-    title: "Sixth Project",
-    description:
-      "loremIpsumas dkasndasjdadkasbdabkasdbk dasdfpoqjkij sdiljasdnlal saldn",
-  },
-  {
-    topProject: false,
-    title: "Seventh Project",
-    description:
-      "loremIpsumas dkasndasjdadkasbdabkasdbk dasdfpoqjkij sdiljasdnlal saldn",
-  },
-];

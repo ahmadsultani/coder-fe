@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function ContactUs() {
   return (
-    <main className="w-screen px-7 lg:px-16">
+    <main id="kontak-kami" className="w-screen scroll-mt-32 px-7 lg:px-16">
       <section className="relative flex w-full flex-col items-center justify-center gap-11 overflow-hidden rounded-2xl border-2 border-solid border-neutral-light-active px-7 py-[52px] text-center shadow-[1px_1px_4px_0px_rgba(0,0,0,0.25)] lg:px-16">
         <section className="relative">
           <Image

@@ -1,26 +1,31 @@
 import axios, { AxiosHeaders } from "axios";
 
-interface callAPIConfig {
+interface callAPIConfig<TBody, TQuery> {
   url: string;
   method?: "GET" | "POST" | "PUT" | "DELETE";
-  data?: string; // JSON in string format
+  data?: TBody;
+  params?: TQuery;
   headers?: AxiosHeaders;
 }
 
-export async function callAPI(config: callAPIConfig) {
+export async function callAPI<TRes, TQuery = undefined, TBody = undefined>(
+  config: callAPIConfig<TBody, TQuery>,
+) {
   const {
     url,
     method = "GET",
     data,
+    params,
     headers = { "Content-Type": "application/json" },
   } = config;
 
   const axiosClient = axios.create();
 
-  const response = await axiosClient({
+  const response = await axiosClient<TRes>({
     method,
     url,
-    data,
+    data: JSON.stringify(data),
+    params,
     headers,
   }).catch((error) => {
     if (error.response) {

@@ -1,19 +1,40 @@
 "use client";
 
-import { useState } from "react";
+import React, { useRef } from "react";
 import PortfolioTabItem from "../atoms/PortfolioTabItems";
+import { useQuery } from "@tanstack/react-query";
+import { getAllDivision } from "@/_service/division";
+import useDraggableScroll from "use-draggable-scroll";
 
-const PortfolioTab = () => {
-  const [active, setActive] = useState<number | null>(1);
+interface PortfolioTabProps {
+  active?: number;
+  setActive: (id?: number) => void;
+}
+
+const PortfolioTab: React.FC<PortfolioTabProps> = ({ active, setActive }) => {
+  const { data: divisions } = useQuery({
+    queryKey: ["division"],
+    queryFn: getAllDivision,
+  });
+
+  const ref = useRef(null);
+
+  const { onMouseDown } = useDraggableScroll(ref, { direction: "horizontal" });
+
   return (
-    <main className=" flex justify-between gap-8 overflow-scroll px-6 md:overflow-auto md:px-9 lg:px-12">
-      {PortfolioTabItems.map((btn) => (
+    <main
+      ref={ref}
+      onMouseDown={onMouseDown}
+      className="flex select-none gap-8 overflow-x-scroll px-6 md:overflow-x-hidden md:px-9 lg:px-12"
+    >
+      <PortfolioTabItem setActive={setActive} active={active} name="Semua" />
+      {divisions?.data?.map((division) => (
         <PortfolioTabItem
           setActive={setActive}
-          id={btn.id}
+          id={division.id}
           active={active}
-          key={btn.id}
-          name={btn.name}
+          key={division.id}
+          name={division.name}
         />
       ))}
     </main>
@@ -21,30 +42,3 @@ const PortfolioTab = () => {
 };
 
 export default PortfolioTab;
-
-const PortfolioTabItems = [
-  {
-    id: 1,
-    name: "Semua",
-  },
-  {
-    id: 2,
-    name: "Website",
-  },
-  {
-    id: 3,
-    name: "Mobile",
-  },
-  {
-    id: 4,
-    name: "Game",
-  },
-  {
-    id: 5,
-    name: "UI/UX",
-  },
-  {
-    id: 6,
-    name: "IOT",
-  },
-];

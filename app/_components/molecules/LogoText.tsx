@@ -3,18 +3,18 @@ import Link from "next/link";
 
 export default function LogoText() {
   return (
-    <section className="flex items-center gap-2">
-      <Link href="/">
-        <div className="hidden md:block">
+    <Link href="/" className="flex items-center gap-2">
+      <div>
+        <div className="hidden shrink-0 md:block">
           <LogoIcon size={56} />
         </div>
-        <div className="md:hidden">
+        <div className="shrink-0 md:hidden">
           <LogoIcon size={30} />
         </div>
-      </Link>
+      </div>
       <div className="flex flex-col text-text-m font-bold leading-tight lg:text-text-m">
         <span>
-          CODER <br className="block md:hidden" /> INSTITUTE
+          CODER <br className="block md:hidden" /> INSTITUTE{" "}
           <span className="hidden md:inline-block">
             HIMPUNAN MAHASISWA INFORMATIKA
           </span>
@@ -23,6 +23,6 @@ export default function LogoText() {
           FAKULTAS TEKNIK UNIVERSITAS HASANUDDIN
         </span>
       </div>
-    </section>
+    </Link>
   );
 }
